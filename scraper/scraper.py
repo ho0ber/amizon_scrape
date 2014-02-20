@@ -29,7 +29,7 @@ class Scraper(object):
 
       # Browser options
       br.set_handle_equiv(True)
-      br.set_handle_gzip(True)
+      #br.set_handle_gzip(True)
       br.set_handle_redirect(True)
       br.set_handle_referer(True)
       br.set_handle_robots(False)
@@ -76,9 +76,9 @@ class Scraper(object):
 
     html = browser.response().read()
 
-    lines = html.split("\n")
+    lines = html.split("\r\n")
     for line in lines:
       if "$scope.marketplace = " in line:
-        return line[len("$scope.marketplace = ")+1:]
+        return line[len("$scope.marketplace = ")+1:-1]
 
     return ""
