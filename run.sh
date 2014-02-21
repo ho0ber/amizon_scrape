@@ -1,4 +1,5 @@
 #!/bin/bash
+CWD=$(pwd)
 
-source venv/bin/activate
-python run.py
+source $CWD/venv/bin/activate
+python $CWD/run.py
