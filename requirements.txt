@@ -1,2 +1,2 @@
 mechanize==0.2.5
-PyYAML==3.10
+PyYAML==4.2b1
